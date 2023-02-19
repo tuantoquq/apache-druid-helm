@@ -1,0 +1,18 @@
+{{- if .Values.sharedPvc.createNew -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.sharedPvc.name }}
+  labels:
+    app: {{ template "druid.name" . }}
+    chart: {{ template "druid.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi
+  {{end}}

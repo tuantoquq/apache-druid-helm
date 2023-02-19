@@ -1,0 +1,17 @@
+dependencies:
+  - name: zookeeper
+    version: 11.1.3
+    repository: https://charts.bitnami.com/bitnami
+    condition: zookeeper.enabled
+  - name: mysql
+    version: 9.4.9
+    repository: https://charts.bitnami.com/bitnami
+    condition: mysql.enabled
+  - name: postgresql
+    version: 12.2.1
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+  - name: ingress-nginx
+    version: 3.7.1
+    repository: https://kubernetes.github.io/ingress-nginx
+    condition: nginx.enabled
